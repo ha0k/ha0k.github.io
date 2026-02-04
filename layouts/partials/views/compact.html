@@ -1,0 +1,121 @@
+{{ $item := .item }}
+
+{{/* 1. オブジェクト自体がない、または必須フィールドが空なら即座に終了 */}}
+{{ if not $item }}
+  {{ return }}
+{{ end }}
+{{ if not $item.Title }}
+  {{ return }}
+{{ end }}
+{{ if not $item.RelPermalink }}
+  {{ return }}
+{{ end }}
+
+{{/* 2. ページオブジェクトでない、またはセクションページを除外 */}}
+{{ if not $item.IsPage }}
+  {{ return }}
+{{ end }}
+{{ if $item.IsSection }}
+  {{ return }}
+{{ end }}
+
+{{/* 3. タイトルが空白文字のみ、またはトップページを除外 */}}
+{{ $trimmedTitle := trim $item.Title " " }}
+{{ if eq $trimmedTitle "" }}
+  {{ return }}
+{{ end }}
+{{ if or (eq $item.RelPermalink "/") (eq $item.RelPermalink "/ja/") (eq $item.RelPermalink "/en/") }}
+  {{ return }}
+{{ end }}
+
+{{/* 4. 著者、セクション、特殊ページを除外 */}}
+{{ if eq $item.Section "authors" }}
+  {{ return }}
+{{ end }}
+{{ if eq $item.Type "authors" }}
+  {{ return }}
+{{ end }}
+{{ if or (eq $item.Kind "home") (eq $item.Kind "section") (eq $item.Kind "taxonomy") }}
+  {{ return }}
+{{ end }}
+{{ if eq $item.Type "landing" }}
+  {{ return }}
+{{ end }}
+
+{{/* 5. cms_exclude が設定されているページを除外 */}}
+{{ if $item.Params.cms_exclude }}
+  {{ return }}
+{{ end }}
+
+{{/* 6. 日付が設定されていないページを除外 */}}
+{{ if $item.Date.IsZero }}
+  {{ return }}
+{{ end }}
+
+{{/* 7. _index ページを除外 */}}
+{{ with $item.File }}
+  {{ if strings.Contains .LogicalName "_index" }}
+    {{ return }}
+  {{ end }}
+{{ end }}
+
+{{/* === 全てのフィルタを通過したアイテムのみ以下を表示 === */}}
+
+{{ $link := $item.RelPermalink }}
+{{ $image := $item.Resources.GetMatch (printf "*%s*" ($item.Params.featured_image | default "featured")) }}
+<div class="w-full px-0 md:px-4">
+  <div class="mx-auto max-w-5xl border-b border-gray-100 dark:border-gray-800 pb-8 mb-8 last:border-0">
+
+    <div class="flex flex-col md:flex-row items-center gap-8 w-full">
+
+      <div class="w-full md:w-1/5 shrink-0 md:max-w-[240px] mx-auto md:mx-0">
+        <a href="{{ $link }}"
+          class="block overflow-hidden rounded-xl bg-gray-100 dark:bg-gray-800 aspect-[3/2] w-full shadow-sm">
+          {{ with $image }}
+          {{ $scaled := .Fill "600x400 Center" }}
+          <img src="{{ $scaled.RelPermalink }}" alt="{{ $item.Title }}"
+            class="w-full h-full object-cover transform hover:scale-105 transition-all duration-500">
+          {{ else }}
+          <div class="w-full h-full flex items-center justify-center text-gray-400">
+            <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-width="1"
+                d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          {{ end }}
+        </a>
+      </div>
+
+      <div class="w-full md:w-4/5 flex flex-col space-y-3 px-4 md:px-0">
+        <h3 class="text-2xl font-bold text-gray-900 dark:text-white leading-tight">
+          <a href="{{ $link }}" class="hover:text-primary-600 transition-colors">{{ $item.Title }}</a>
+        </h3>
+
+        {{ with $item.Params.tags }}
+        <div class="flex flex-wrap gap-2 py-1">
+          {{ range . }}
+          <span
+            class="px-2.5 py-0.5 rounded-full text-xs font-medium bg-primary-50 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300">{{
+            . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+
+        <div class="flex items-center justify-between pt-2 w-full">
+          <div class="text-sm text-gray-500 dark:text-gray-400 flex items-center">
+            <svg class="h-4 w-4 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            {{ $item.Date | time.Format ":date_medium" }}
+          </div>
+
+          <a href="{{ $link }}"
+            class="inline-flex items-center text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400 dark:hover:text-primary-300 group">
+            Read more <span class="ml-1 transform group-hover:translate-x-1 transition-transform">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

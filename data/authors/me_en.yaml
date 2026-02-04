@@ -1,0 +1,104 @@
+schema: "hugoblox/author/v1"
+slug: "me"
+is_owner: true
+name:
+  display: "Hiroto Aoki"
+  given: "Hiroto"
+  family: "Aoki"
+  alternate: "Hiroto Aoki"
+  pronunciation: ""
+status:
+  icon: "🦾"
+role: ""
+bio: |
+  I am interested in enriching our lives by perceiving and manipulating information not just within digital spaces, but as something tangible in the real world that can be experienced through our five senses. I am particularly interested in visual augmentation and invasive devices. Currently, I am conducting research on lightweight, battery-free AR displays.
+affiliations:
+  - name: |
+      The University of Tokyo
+      Rekimoto Lab
+      Visiting Researcher
+    url: "https://lab.rekimoto.org/"
+links:
+  - icon: "at-symbol"
+    url: "mailto:hirotoaoki1349@gmail.com"
+    label: "Email"
+  - icon: "brands/github"
+    url: "https://github.com/ha0k"
+  - icon: "academicons/google-scholar"
+    url: "https://scholar.google.co.jp/citations?user=9ICTqzcAAAAJ&hl=ja"
+  - icon: "academicons/orcid"
+    url: "https://orcid.org/0009-0001-8232-9998"
+interests:
+  - "Human Augmentation"
+  - "Augmented Reality"
+  - "Virtual Reality"
+  - "Human-Computer Interaction"
+education:
+  - degree: "Ph.D. (Expected)"
+    institution: "The University of Tokyo"
+    start: "2026-04-01"
+    summary: "Research on Human Augmentation"
+  - degree: "M.A. in Interdisciplinary Information Studies"
+    institution: "The University of Tokyo"
+    start: "2018-04-01"
+    end: "2020-03-31"
+  - degree: "B.Eng. in Information and Computer Science"
+    institution: "Keio University, Faculty of Science and Technology"
+    start: "2014-04-01"
+    end: "2018-03-31"
+experience:
+  - role: "Iridescence Inc."
+    org: "CEO"
+    start: "2025-08-08"
+  - role: "Institute of Science Tokyo, School of Computing"
+    org: "Research Staff"
+    start: "2025-10-01"
+    summary: "Research on AR Displays"
+  - role: "JST 2024 START SBIR Phase 1 Support"
+    org: "Project Manager"
+    start: "2024-04-01"
+    end: "2025-03-31"
+    summary: "Project: Development and Commercialization of Lightweight, Battery-Free AR Display Technology with Separated Projection and Display Systems"
+  - role: "Japan Trading Card Center Inc."
+    org: "Engineer"
+    start: "2024-05-01"
+    end: "2025-10-31"
+    summary: "Backend and Frontend Development"
+  - role: "re Inc."
+    org: "Engineer"
+    start: "2018-10-01"
+    end: "2024-04-30"
+    summary: "Backend and Frontend Development"
+  - role: "Hackers Bar"
+    org: "Bartender & Hacker"
+    start: "2015-04-01"
+    end: "2020-03-31"
+    summary: ""
+skills:
+  - name: "Technical Skills"
+    items:
+      - label: "Python"
+        level: 5
+      - label: "Machine Learning"
+        level: 4
+      - label: "Unity"
+        level: 4
+  - name: "Research & Communication"
+    items:
+      - label: "Academic Writing"
+        level: 4
+      - label: "Conference Presentations"
+        level: 4
+languages:
+  - name: "Japanese"
+    level: 5
+    label: "Native"
+  - name: "English"
+    level: 4
+    label: "Fluent"
+awards:
+  - title: "Best Paper Award"
+    awarder: "IPSJ (Information Processing Society of Japan)"
+    date: "2022-03-01"
+    summary: "Awarded for research on Human Augmentation"
+    icon: "hero/trophy"

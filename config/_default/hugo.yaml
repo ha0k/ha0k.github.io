@@ -4,17 +4,17 @@
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
 # Website name (set in params.yaml under hugoblox.branding.name)
-title: ''
+title: 'Hiroto Aoki'
 # Website URL
-baseURL: 'https://example.com/'
+baseURL: 'https://ha0k.github.io/'
 
 ############################
 ## LANGUAGE
 ############################
 
-defaultContentLanguage: en
-hasCJKLanguage: false
-defaultContentLanguageInSubdir: false
+defaultContentLanguage: ja  # デフォルトを日本語に設定
+hasCJKLanguage: true       # 日本語（中国語・韓国語）を正しく処理するために必須
+defaultContentLanguageInSubdir: true # URLを /ja/ /en/ に分ける設定
 removePathAccents: true
 
 ############################

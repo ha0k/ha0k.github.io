@@ -1,0 +1,101 @@
+schema: "hugoblox/author/v1"
+slug: "me"
+is_owner: true
+name:
+  display: "青木 大登"
+  given: "大登"
+  family: "青木"
+  alternate: "Hiroto Aoki"
+  pronunciation: ""
+status:
+  icon: "🦾"
+role: ""
+bio: |
+  情報をデジタル空間の中で完結させるのではなく、現実世界の中で、五感で感じ取り、操作できるものとして捉えることで、生活を豊かにする、ということに興味があります。中でも視覚拡張、侵襲型デバイスに興味があり、現在は軽量・無電源で利用可能なARディスプレイに関する研究を行っています。
+affiliations:
+  - name: "東京大学 暦本研究室 客員研究員"
+    url: "https://lab.rekimoto.org/"
+links:
+  - icon: "at-symbol"
+    url: "mailto:hirotoaoki1349@gmail.com"
+    label: "メール"
+  - icon: "brands/github"
+    url: "https://github.com/ha0k"
+  - icon: "academicons/google-scholar"
+    url: "https://scholar.google.co.jp/citations?user=9ICTqzcAAAAJ&hl=ja"
+  - icon: "academicons/orcid"
+    url: "https://orcid.org/0009-0001-8232-9998"
+interests:
+  - "Human Augmentation"
+  - "Augmented Reality"
+  - "Virtual Reality"
+  - "Human-Computer Interaction"
+education:
+  - degree: "博士課程（予定）"
+    institution: "東京大学"
+    start: "2026-04-01"
+    summary: "ヒューマンオーグメンテーションに関する研究"
+  - degree: "修士（学際情報学）"
+    institution: "東京大学"
+    start: "2018-04-01"
+    end: "2020-03-31"
+  - degree: "学士（工学）"
+    institution: "慶應義塾大学理工学部情報工学科"
+    start: "2014-04-01"
+    end: "2018-03-31"
+experience:
+  - role: "株式会社Iridescence"
+    org: "CEO"
+    start: "2025-08-08"
+  - role: "東京科学大学 情報理工学院"
+    org: "研究職員"
+    start: "2025-10-01"
+    summary: "ARディスプレイに関する研究"    
+  - role: "JST 2024年度 研究成果展開事業 大学発新産業創出プログラム プロジェクト推進型　SBIR フェーズ1支援"
+    org: "PM"
+    start: "2024-04-01"
+    end: "2025-03-31"
+    summary: "「投影・表示系分離構成による軽量・電源レスな拡張現実感（ＡＲ）ディスプレイ空間技術の開発・事業化」プロジェクト"  
+  - role: "株式会社日本トレカセンター"
+    org: "エンジニア"
+    start: "2024-05-01"
+    end: "2025-10-31"
+    summary: "バックエンド・フロントエンド開発"    
+  - role: "株式会社re"
+    org: "エンジニア"
+    start: "2018-10-01"
+    end: "2024-04-30"
+    summary: "バックエンド・フロントエンド開発"   
+  - role: "Hackers Bar"
+    org: "バーテンダー兼ハッカー"
+    start: "2015-04-01"
+    end: "2020-03-31"
+    summary: ""    
+skills:
+  - name: "技術スキル"
+    items:
+      - label: "Python"
+        level: 5
+      - label: "機械学習"
+        level: 4
+      - label: "Unity"
+        level: 4
+  - name: "研究・コミュニケーション"
+    items:
+      - label: "論文執筆"
+        level: 4
+      - label: "学会発表"
+        level: 4
+languages:
+  - name: "日本語"
+    level: 5
+    label: "母語"
+  - name: "英語"
+    level: 4
+    label: "流暢"
+awards:
+  - title: "最優秀論文賞"
+    awarder: "情報処理学会"
+    date: "2022-03-01"
+    summary: "ヒューマンオーグメンテーションに関する研究で受賞"
+    icon: "hero/trophy"
